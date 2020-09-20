@@ -1,30 +1,27 @@
-// Read in JSON file & assign variable to it
-let data = d3.json("././data/samples.json").then(function (data) {
+// Read in JSON file
+d3.json("./data/samples.json").then((data) => {
     console.log(data);
-
-    // Build dropdown list content
-    // Get a reference to the test subject id dropdown menu
+    
+    // Populate dropdown menu with sample ids
     let dropdownMenu = d3.select("select");
+    data.names.forEach(name => {
+        dropdownMenu.append("option").text(name);
+        });
 
-    // Get the list of text subject ids
-    let ids = data.names;
-    console.log(ids);
-
-    // Append each value of ids to dropdownMenu as an option
-    ids.forEach(id => {
-        let idOption = dropdownMenu.append("option");
-        idOption.text(id);
-    });
-
-    // Initialize the page with default plots & table
-    // function init() {
-    //     data.samples.filter(sample => sample === 940);
-    //     console.log(sample)
-    //     // barData = 
-    // }
-
-
-
+    // Grab values from response json object to built the plots
+    
 });
 
+
+
+
+// // Initialize the page with default plots & table
+// function init() {
+//     barData = data.samples.filter(sample => sample === 940);
+//     console.log(sample)
+    
+// }
+
+// // Run initial plot function
+// init();
 
