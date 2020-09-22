@@ -35,7 +35,7 @@ function buildPlots(sampleId) {
         console.log(otuIDs);
         console.log(otuLabels);
 
-        // Plot horizontal bar chart
+        // Plot horizontal bar chart with top 10 samples' values
         let barData = [{
             type: "bar",
             x: sampleValues.slice(0, 10).reverse(),
@@ -91,6 +91,36 @@ function buildPlots(sampleId) {
                 .text(`${key[0]}: ${key[1]}`);
                 console.log(`${key[0]}: ${key[1]}`);
         });
+
+        // Plot gauge chart
+        let gaugeData = [
+            {
+              domain: { x: [0, 1], y: [0, 1] },
+              value: metadata.wfreq,
+              title: { text: "<b>Belly Button Wash Frequency</b><br>" +
+                                "Wash per Week" },
+              type: "indicator",
+              mode: "gauge+number",
+              gauge: {
+                axis: { range: [null, 9] },
+                bar: { color: "yellow"},
+                steps: [
+                  { range: [0, 1], color: "rgba(81, 134, 28, .2)" },
+                  { range: [1, 2], color: "rgba(81, 134, 28, .3)" },
+                  { range: [2, 3], color: "rgba(81, 134, 28, .4)" },
+                  { range: [3, 4], color: "rgba(81, 134, 28, .5)" },
+                  { range: [4, 5], color: "rgba(81, 134, 28, .6)" },
+                  { range: [5, 6], color: "rgba(81, 134, 28, .7)" },
+                  { range: [6, 7], color: "rgba(81, 134, 28, .8)" },
+                  { range: [7, 8], color: "rgba(81, 134, 28, .9)" },
+                  { range: [8, 9], color: "rgba(81, 134, 28, 1)" }
+                ],
+              }
+            }
+          ];
+          
+          let gaugeLayout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
+          Plotly.newPlot('gauge', gaugeData, gaugeLayout);
     })
 }
 
