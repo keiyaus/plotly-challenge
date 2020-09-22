@@ -5,4 +5,4 @@ https://guides.github.com/features/mastering-markdown/
 
 ## User Flow Diagram
 
-## 
+## Building the dashboard
