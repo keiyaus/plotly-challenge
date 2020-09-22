@@ -50,6 +50,8 @@ function buildPlots(sampleId) {
             title: `Top 10 OTUs Found in Sample ${sampleId}`,
             xaxis: { title: "Amount of OTU"},
             yaxis: { title: "OTU IDs"},
+            width: 600,
+            height: 600
         };
 
         Plotly.newPlot("bar", barData, barLayout);
@@ -75,6 +77,8 @@ function buildPlots(sampleId) {
                 title: "Amount of OTU",
                 automargin: true
             },
+            width: 1200,
+            height: 800
         };
 
         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
@@ -119,7 +123,7 @@ function buildPlots(sampleId) {
             }
           ];
           
-          let gaugeLayout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
+          let gaugeLayout = { width: 500, height: 400, margin: { t: 0, b: 0 } };
           Plotly.newPlot('gauge', gaugeData, gaugeLayout);
     })
 }
