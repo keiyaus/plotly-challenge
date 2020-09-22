@@ -23,26 +23,26 @@ function buildPlots(sampleId) {
         let samples = data.samples.filter(s => s.id.toString() === sampleId)[0];
 
         // Grab values to build the plots
-        let sampleValues = samples.sample_values.slice(0, 10).reverse();
-        let otuIDs = samples.otu_ids.slice(0, 10);
-        let otuLabels = samples.otu_labels.slice(0, 10);
+        let sampleValues = samples.sample_values;
+        let otuIDs = samples.otu_ids;
+        let otuLabels = samples.otu_labels;
 
         // Console log grabbed values for checking
         console.log(`Sample ID: ${sampleId}`);
         console.log(metadata);
         console.log(samples);
-        console.log(`Top 10 OTU sample values: ${sampleValues}`);
-        console.log(`Top 10 OTU IDs: ${otuIDs}`);
-        console.log(`Top 10 OTU labels: ${otuLabels}`);
+        console.log(sampleValues);
+        console.log(otuIDs);
+        console.log(otuLabels);
 
         // Plot horizontal bar chart
         let barData = [{
             type: "bar",
-            x: sampleValues,
-            y: otuIDs.toString(),
+            x: sampleValues.slice(0, 10).reverse(),
+            y: otuIDs.slice(0, 10).map((x) => `OTU ${x}`).reverse(),
             hovertemplate: "<b>Amount</b>: %{x}<br>" +
                             "<b>OTU</b>: %{text}",
-            text: otuLabels,
+            text: otuLabels.slice(0, 10),
             orientation: "h"
         }];
 
@@ -71,7 +71,11 @@ function buildPlots(sampleId) {
         let bubbleLayout = {
             title:`Top 10 OTUs Found in Sample ${sampleId}`,
             xaxis: { title: "OTU IDs" },
-            yaxis: { title: "Amount of OTU"}
+            yaxis: { 
+                title: "Amount of OTU",
+                automargin: true
+            },
+            // margin: { t: 10}
         };
 
         Plotly.newPlot("bubble", [bubbleData], bubbleLayout);
