@@ -49,7 +49,7 @@ function buildPlots(sampleId) {
         let barLayout = {
             title: `Top 10 OTUs Found in Sample ${sampleId}`,
             xaxis: { title: "Amount of OTU"},
-            yaxis: { title: "OTU IDs"}
+            yaxis: { title: "OTU IDs"},
         };
 
         Plotly.newPlot("bar", barData, barLayout);
@@ -69,13 +69,12 @@ function buildPlots(sampleId) {
         }];
 
         let bubbleLayout = {
-            title:`Top 10 OTUs Found in Sample ${sampleId}`,
+            title:`All OTUs Found in Sample ${sampleId}`,
             xaxis: { title: "OTU IDs" },
             yaxis: { 
                 title: "Amount of OTU",
                 automargin: true
             },
-            // margin: { t: 10}
         };
 
         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
