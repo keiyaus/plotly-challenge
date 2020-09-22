@@ -55,7 +55,7 @@ function buildPlots(sampleId) {
         Plotly.newPlot("bar", barData, barLayout);
 
         // // Plot bubble chart
-        let bubbleData = {
+        let bubbleData = [{
             x: otuIDs,
             y: sampleValues,
             mode: "markers",
@@ -66,7 +66,7 @@ function buildPlots(sampleId) {
             hovertemplate: "<b>Amount</b>: %{y}<br>" +
                             "<b>OTU</b>: %{text}",
             text: otuLabels
-        };
+        }];
 
         let bubbleLayout = {
             title:`Top 10 OTUs Found in Sample ${sampleId}`,
@@ -78,7 +78,7 @@ function buildPlots(sampleId) {
             // margin: { t: 10}
         };
 
-        Plotly.newPlot("bubble", [bubbleData], bubbleLayout);
+        Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
         // Populate demographic info box
         let box = d3.select("#sample-metadata");
