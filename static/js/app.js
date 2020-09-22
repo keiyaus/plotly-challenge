@@ -47,7 +47,7 @@ function buildPlots(sampleId) {
         }];
 
         let barLayout = {
-            title: `Top 10 OTUs Found in Sample ${sampleId}`,
+            title: `<b>Top 10 OTUs Found in Sample ${sampleId}</b>`,
             xaxis: { title: "Amount of OTU"},
             yaxis: { title: "OTU IDs"},
             width: 600,
@@ -71,7 +71,7 @@ function buildPlots(sampleId) {
         }];
 
         let bubbleLayout = {
-            title:`All OTUs Found in Sample ${sampleId}`,
+            title:`<b>All OTUs Found in Sample ${sampleId}</b>`,
             xaxis: { title: "OTU IDs" },
             yaxis: { 
                 title: "Amount of OTU",
