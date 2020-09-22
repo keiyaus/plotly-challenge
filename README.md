@@ -3,6 +3,8 @@ https://guides.github.com/features/mastering-markdown/
 
 ## Background
 
-## User Flow Diagram
+## Determine User Flow
+
+## Review Dataset & HTML File
 
 ## Building the dashboard
