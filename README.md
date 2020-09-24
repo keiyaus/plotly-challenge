@@ -7,7 +7,7 @@ Ever thought of the belly button as a habitat for organisms? Scientists have [st
 
 This project aims to create a dashboard for the microbes dataset offering the following:
 * Visualize the data collected from each of the 153 research participants with a series of charts.
-* Allow user to select and view specific participant's data.
+* Allow user to interact and explore the dataset by selecting to view specific participant's data.
 * Accessible on the Internet.
 
 ## Examine the Data 
