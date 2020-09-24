@@ -12,19 +12,19 @@ This project aims to create a dashboard for the microbes dataset offering the fo
 
 ## Examine the Data 
 * The dataset is stored in the JSON format containing three objects:
-* "names": Contain an array of unique IDs of all participants.
-* "metadata": Contain the demographic information of each participant such as gender, age, location etc.
-* "samples": Contain the ID, name and sample value of each of the microbes identified in each participant.
+    * **names**: Contain an array of unique IDs of all participants.
+    * **metadata**: Contain the demographic information of each participant such as gender, age, location etc.
+    * **samples**: Contain the ID, name and sample value of each of the microbes identified in each participant.
 
 ## Determine User Flow
-In order to build the dashboard, user flow was determined as follow:
+In order to build the dashboard, user flow was determined as follows:
 1. User loads the dashboard webpage for the first time
 2. Dashboard showcases charts with default sample values.
 3. User uses dropdown menu to select research participant to view.
 4. Dashboard updates charts with sample values of selected participant.
 5. User can repeat step 3 as many times as desired.
 
-## Building the dashboard
+## Building the Dashboard
 Based on how the data is organized and the user flow, the dashboard was created using a series of functions written in JavaScript:
 * A function to load the default charts upon first visit.
 * A function to build the charts.
