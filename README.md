@@ -30,6 +30,9 @@ Based on how the data is organized and the user flow, the dashboard was created 
 * A function to build the charts.
 * A function to handle an event change, i.e. when another participant is selected by the user.
 
+The dashboard is deployed to Github pages and can be accessed here:
+https://keiyaus.github.io/plotly-challenge/
+
 The end result:
 
 ![dashboard1](/images/dashboard-1.PNG)
