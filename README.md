@@ -32,5 +32,5 @@ Based on how the data is organized and the user flow, the dashboard was created 
 
 The end result:
 
-![dashboard1]()
-![dashboard2]()
+![dashboard1](/images/dashboard-1.PNG)
+![dashboard2](/images/dashboard-2.PNG)
